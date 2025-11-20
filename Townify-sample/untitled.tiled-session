@@ -1,0 +1,65 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "untitled.tmx",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "fileStates": {
+        "": {
+            "scaleInEditor": 1
+        },
+        "untitled.tmx": {
+            "scale": 0.5,
+            "selectedLayer": 5,
+            "viewCenter": {
+                "x": 777,
+                "y": 429
+            }
+        },
+        "untitled.tmx#Inside_home_B": {
+            "scaleInDock": 0.75
+        },
+        "untitled.tmx#Interiors": {
+            "scaleInDock": 0.75
+        },
+        "untitled.tmx#Room_wall": {
+            "scaleInDock": 0.75
+        },
+        "untitled.tmx#Tileset_32x32_2": {
+            "scaleInDock": 1
+        },
+        "untitled.tmx#floor": {
+            "scaleInDock": 1
+        },
+        "untitled.tmx#floordiff": {
+            "scaleInDock": 1
+        },
+        "untitled.tmx#main-bg": {
+            "scaleInDock": 1
+        },
+        "untitled.tmx#sa": {
+            "scaleInDock": 1
+        },
+        "untitled.tmx#trees": {
+            "scaleInDock": 1
+        }
+    },
+    "last.exportedFilePath": "C:/Users/moham/100xdev-cohort-projects/Townify-og/maps",
+    "last.imagePath": "C:/Users/moham/100xdev-cohort-projects/Townify-og/tilesets",
+    "map.height": 30,
+    "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
+    "map.lastUsedFormat": "tmx",
+    "map.width": 50,
+    "openFiles": [
+        "untitled.tmx"
+    ],
+    "project": "untitled.tiled-project",
+    "property.type": "string",
+    "recentFiles": [
+        "untitled.tmx"
+    ],
+    "tileset.embedInMap": true
+}
