@@ -21,7 +21,6 @@ wss.on("connection", (ws) => {
             console.log("User joined:", socket.get(ws));
         }
 
-       
         if (response.type === "chat") {
             const roomId = response.payload.roomId;
             const chatMsg = response.payload.message;
@@ -42,3 +41,5 @@ wss.on("connection", (ws) => {
         }
     });
 });
+
+
