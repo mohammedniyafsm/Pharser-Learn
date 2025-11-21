@@ -1,45 +1,36 @@
-import WebSocket, { WebSocketServer } from "ws";
+import WebSocket, { WebSocketServer } from "ws"
 
-interface websocketI {
-    roomId: string;
-    name: string;
+interface webSocketI {
+    name : string,
+    roomId : string
 }
 
-const wss = new WebSocketServer({ port: 8080 });
+let allSocket = new Map<WebSocket,webSocketI>();
 
-const socket = new Map<WebSocket, websocketI>();
 
-wss.on("connection", (ws) => {
-    ws.on("message", (message: any) => {
-        const response = JSON.parse(message.toString());
+const wss = new WebSocketServer({ port:8080 })
 
-        if (response.type === "join") {
-            socket.set(ws, {
-                roomId: response.payload.roomId,
-                name: response.payload.name
-            });
-            console.log("User joined:", socket.get(ws));
+wss.on("connection",(ws)=>{
+  
+    ws.send("Conneted to WebSocket Server 8080");
+
+    ws.on("message",(message : any)=>{
+        const data = JSON.parse(message);
+
+        if(data.type == "join"){
+            allSocket.set(ws,{name :data.payload.name,roomId:data.payload.roomId});
+            console.log("User Connetected",{name :data.payload.name,roomId:data.payload.roomId});
         }
 
-        if (response.type === "chat") {
-            const roomId = response.payload.roomId;
-            const chatMsg = response.payload.message;
-
-          
-            for (const [client, info] of socket) {
-                if (info.roomId === roomId && client.readyState === WebSocket.OPEN) {
-                    client.send(
-                        JSON.stringify({
-                            type: "chat",
-                            from: socket.get(ws)?.name,
-                            roomId,
-                            message: chatMsg
-                        })
-                    );
+        if(data.type == "chat"){
+            for( const [key,values] of allSocket.entries()){
+                if(data.payload.roomId == values.roomId){
+                    key.send(JSON.stringify(data.payload.message));
+                    console.log(allSocket);
                 }
             }
         }
-    });
-});
+    })
+})
 
 
